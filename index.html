@@ -1,39 +1,118 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Giants General Contracting</title>
+
   <style>
     body {
-      font-family: Arial;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #F5F5F5;
+    }
+
+    .header {
+      background: #0B1F3B;
       text-align: center;
-      background: #f4f4f4;
-      padding-top: 120px;
+      padding: 30px;
     }
-    .box {
-      background: white;
-      display: inline-block;
-      padding: 40px;
-      border-radius: 10px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+
+    .logo {
+      width: 120px;
+      max-width: 80%;
     }
+
+    .container {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
     h1 {
-      font-size: 32px;
+      color: #0B1F3B;
+      font-size: 36px;
+      margin-bottom: 10px;
     }
-    .status {
-      color: #e67e22;
+
+    .badge {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #F28C28;
+      color: white;
+      border-radius: 25px;
       font-weight: bold;
-      margin-top: 15px;
+    }
+
+    p {
+      color: #444;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+
+    .contact {
+      margin-top: 30px;
+      font-size: 16px;
+      color: #222;
+      line-height: 1.8;
+    }
+
+    .whatsapp {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 22px;
+      background: #25D366;
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      margin-top: 60px;
+      padding: 15px;
+      background: #0B1F3B;
+      color: white;
+      text-align: center;
+      font-size: 14px;
     }
   </style>
 </head>
+
 <body>
 
-  <div class="box">
-    <h1>Giants General Contracting</h1>
-    <p>Our official website is under development.</p>
-    <div class="status">🚧 Under Construction 🚧</div>
-    <p>Contact: info@giantsgc.com</p>
+  <!-- HEADER WITH LOGO -->
+  <div class="header">
+    <img src="logo.png" class="logo" alt="Giants Logo">
   </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="container">
+
+    <h1>Giants General Contracting</h1>
+
+    <div class="badge">🚧 Under Construction 🚧</div>
+
+    <p>
+      We are building a professional construction and engineering platform.
+    </p>
+
+    <!-- CONTACT INFO -->
+    <div class="contact">
+      📧 info@giantsgc.com<br>
+      📞 +20 12 8123 9563
+    </div>
+
+    <!-- WHATSAPP BUTTON -->
+    <a class="whatsapp" href="https://wa.me/201281239563" target="_blank">
+      💬 Contact on WhatsApp
+    </a>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Giants General Contracting
+  </footer>
 
 </body>
 </html>
