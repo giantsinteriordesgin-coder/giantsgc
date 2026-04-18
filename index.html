@@ -8,20 +8,24 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #F5F5F5;
+      background: linear-gradient(to bottom, #F5F5F5, #EAEAEA);
     }
 
+    /* HEADER */
     .header {
       background: #0B1F3B;
       text-align: center;
-      padding: 30px;
+      padding: 40px 20px;
+      border-bottom: 4px solid #F28C28;
     }
 
     .logo {
-      width: 120px;
+      width: 180px;
       max-width: 80%;
+      height: auto;
     }
 
+    /* MAIN CONTENT */
     .container {
       text-align: center;
       padding: 60px 20px;
@@ -33,10 +37,17 @@
       margin-bottom: 10px;
     }
 
+    .subtitle {
+      color: white;
+      margin-top: 10px;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
     .badge {
       display: inline-block;
       margin-top: 20px;
-      padding: 10px 20px;
+      padding: 10px 22px;
       background: #F28C28;
       color: white;
       border-radius: 25px;
@@ -47,8 +58,10 @@
       color: #444;
       font-size: 16px;
       margin-top: 20px;
+      line-height: 1.6;
     }
 
+    /* CONTACT */
     .contact {
       margin-top: 30px;
       font-size: 16px;
@@ -56,6 +69,7 @@
       line-height: 1.8;
     }
 
+    /* WHATSAPP BUTTON */
     .whatsapp {
       display: inline-block;
       margin-top: 20px;
@@ -67,6 +81,7 @@
       font-weight: bold;
     }
 
+    /* FOOTER */
     footer {
       margin-top: 60px;
       padding: 15px;
@@ -80,12 +95,16 @@
 
 <body>
 
-  <!-- HEADER WITH LOGO -->
+  <!-- HEADER -->
   <div class="header">
     <img src="logo.png" class="logo" alt="Giants Logo">
+
+    <div class="subtitle">
+      Engineering • Construction • Infrastructure
+    </div>
   </div>
 
-  <!-- MAIN CONTENT -->
+  <!-- MAIN SECTION -->
   <div class="container">
 
     <h1>Giants General Contracting</h1>
@@ -93,7 +112,8 @@
     <div class="badge">🚧 Under Construction 🚧</div>
 
     <p>
-      We are building a professional construction and engineering platform.
+      We are building a professional construction and engineering platform<br>
+      focused on delivering high-quality solutions.
     </p>
 
     <!-- CONTACT INFO -->
@@ -102,7 +122,7 @@
       📞 +20 12 8123 9563
     </div>
 
-    <!-- WHATSAPP BUTTON -->
+    <!-- WHATSAPP -->
     <a class="whatsapp" href="https://wa.me/201281239563" target="_blank">
       💬 Contact on WhatsApp
     </a>
