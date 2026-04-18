@@ -1,52 +1,86 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Services</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services | Giants General Contracting</title>
 
 <style>
 body{margin:0;font-family:Arial;background:#f5f7fa;}
 
-header{
+nav{position:absolute;top:20px;right:20px;}
+nav a{color:white;margin-left:15px;text-decoration:none;font-weight:bold;}
+
+.hero{
+  height:50vh;
   background:#0B1F3B;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   text-align:center;
-  padding:30px;
+  color:white;
+  position:relative;
 }
+.hero::before{
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.55);
+}
+.hero-content{position:relative;z-index:2;}
 
-.logo{width:180px;cursor:pointer;}
+.logo{width:200px;transition:0.3s;}
+.logo:hover{transform:scale(1.05);}
 
-nav{text-align:center;background:white;padding:10px;}
+.section{padding:80px 20px;text-align:center;}
 
-nav a{margin:10px;color:#0B1F3B;text-decoration:none;font-weight:bold;}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+  max-width:1100px;
+  margin:auto;
+}
 
 .card{
   background:white;
-  margin:15px;
-  padding:20px;
-  border-radius:10px;
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 5px 20px rgba(0,0,0,0.08);
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <a href="index.html">
-    <img src="assets/logo.png" class="logo">
-  </a>
-</header>
+<div class="hero">
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="services.html">Services</a>
-  <a href="projects.html">Projects</a>
-  <a href="contact.html">Contact</a>
-</nav>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
-<div class="card">Civil Construction Works</div>
-<div class="card">Landscaping & Irrigation</div>
-<div class="card">HVAC Systems</div>
-<div class="card">Interior Fit-Out</div>
+  <div class="hero-content">
+    <a href="index.html">
+      <img src="assets/logo.png" class="logo">
+    </a>
+    <h1>Our Services</h1>
+  </div>
+
+</div>
+
+<div class="section">
+  <div class="grid">
+    <div class="card">Civil Construction Works</div>
+    <div class="card">Infrastructure Development</div>
+    <div class="card">Landscaping & Irrigation</div>
+    <div class="card">HVAC Systems</div>
+    <div class="card">Interior Fit-Out</div>
+  </div>
+</div>
 
 </body>
 </html>
