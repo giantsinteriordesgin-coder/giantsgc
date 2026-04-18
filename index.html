@@ -3,76 +3,66 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Giants General Contracting | Engineering & Construction</title>
+<title>Giants EPC</title>
 
 <style>
-body { margin:0; font-family:Arial; background:#fff; }
+body{margin:0;font-family:Arial;background:#f5f7fa;}
 
-header {
-  background:#f5f7fa;
-  color:#0B1F3B;
+header{
+  background:#0B1F3B;
   text-align:center;
-  padding:50px 20px;
+  padding:40px;
 }
 
-.logo { width:220px; }
+.logo{
+  width:200px;
+  cursor:pointer;
+  transition:0.3s;
+}
 
-nav {
-  background:#ffffff;
+.logo:hover{transform:scale(1.05);}
+
+nav{
+  background:white;
   text-align:center;
   padding:15px;
-  border-bottom:2px solid #eee;
 }
 
-nav a {
-  margin:0 15px;
+nav a{
+  margin:10px;
   text-decoration:none;
   color:#0B1F3B;
   font-weight:bold;
 }
 
-.hero {
+.hero{
   text-align:center;
   padding:60px 20px;
+  background:white;
 }
 
-.hero h1 { font-size:36px; color:#0B1F3B; }
+.hero h1{color:#0B1F3B;}
 
-.badge {
-  background:#F28C28;
-  color:white;
+.section{
+  padding:40px;
+  text-align:center;
+}
+
+.card{
+  background:white;
+  padding:20px;
+  margin:10px;
   display:inline-block;
-  padding:8px 18px;
-  border-radius:20px;
-  margin-top:10px;
-}
-
-.section {
-  padding:60px 20px;
-  text-align:center;
-  background:white;
-}
-
-.grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
-  max-width:1000px;
-  margin:auto;
-}
-
-.card {
-  background:white;
-  padding:25px;
+  width:200px;
   border-radius:10px;
-  box-shadow:0 5px 20px rgba(0,0,0,0.08);
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
-footer {
+footer{
   background:#0B1F3B;
   color:white;
   text-align:center;
-  padding:20px;
+  padding:15px;
 }
 </style>
 </head>
@@ -80,9 +70,9 @@ footer {
 <body>
 
 <header>
-  <img src="assets/logo.png" class="logo">
-  <h1>Giants General Contracting</h1>
-  <p>Engineering • Landscaping • Construction</p>
+  <a href="index.html">
+    <img src="assets/logo.png" class="logo">
+  </a>
 </header>
 
 <nav>
@@ -94,25 +84,18 @@ footer {
 </nav>
 
 <div class="hero">
-  <h1>Building Infrastructure That Lasts</h1>
-  <div class="badge">General Contractor in Egypt</div>
+  <h1>Giants EPC</h1>
+  <p>Engineering • Construction • Infrastructure</p>
 </div>
 
 <div class="section">
-  <h2>Our Core Services</h2>
-
-  <div class="grid">
-    <div class="card">Civil Construction</div>
-    <div class="card">Accessibility & Mobility Solutions</div>
-    <div class="card">Landscaping</div>
-    <div class="card">HVAC Systems</div>
-    <div class="card">Interior Fit-Out & Design</div>
-  </div>
+  <div class="card">Civil Works</div>
+  <div class="card">Landscaping</div>
+  <div class="card">HVAC</div>
+  <div class="card">Interior Fit-Out</div>
 </div>
 
-<footer>
-© 2026 Giants GENERAL CONTRACTING
-</footer>
+<footer>© 2026 Giants EPC</footer>
 
 </body>
 </html>
