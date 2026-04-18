@@ -7,19 +7,26 @@
   <title>Giants General Contracting</title>
 
   <style>
+    :root {
+      --blue: #0B1F3B;
+      --accent: #F28C28;
+      --light: #F5F7FA;
+      --white: #ffffff;
+      --text: #333;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #ffffff;
-      color: #0B1F3B;
-      overflow-x: hidden;
+      background: var(--light);
+      color: var(--blue);
     }
 
     /* HEADER */
     .header {
+      background: var(--blue);
       text-align: center;
       padding: 40px 15px;
-      border-bottom: 3px solid #0B1F3B;
     }
 
     .logo {
@@ -31,7 +38,7 @@
     .subtitle {
       margin-top: 10px;
       font-size: 14px;
-      font-weight: bold;
+      color: var(--white);
       letter-spacing: 1px;
     }
 
@@ -39,6 +46,7 @@
     .hero {
       text-align: center;
       padding: 60px 20px;
+      background: var(--white);
     }
 
     h1 {
@@ -50,15 +58,14 @@
       display: inline-block;
       margin-top: 15px;
       padding: 10px 20px;
-      background: #0B1F3B;
+      background: var(--accent);
       color: white;
       border-radius: 25px;
       font-weight: bold;
-      animation: pulse 2s infinite;
     }
 
     p {
-      color: #444;
+      color: var(--text);
       font-size: 16px;
       margin-top: 20px;
       line-height: 1.6;
@@ -69,13 +76,14 @@
 
     /* SERVICES */
     .services {
-      background: #f5f7fa;
+      background: var(--light);
       padding: 60px 20px;
       text-align: center;
     }
 
     .services h2 {
       margin-bottom: 30px;
+      color: var(--blue);
     }
 
     .grid {
@@ -87,14 +95,12 @@
     }
 
     .card {
-      background: white;
+      background: var(--white);
       padding: 25px;
       border-radius: 12px;
       box-shadow: 0 5px 20px rgba(0,0,0,0.08);
       font-weight: bold;
       transition: 0.3s ease;
-      opacity: 0;
-      transform: translateY(30px);
     }
 
     .card:hover {
@@ -106,12 +112,24 @@
     .contact {
       text-align: center;
       padding: 60px 20px;
+      background: var(--white);
     }
 
     .contact-box {
       margin-top: 20px;
       font-size: 16px;
       line-height: 1.8;
+    }
+
+    /* EMAIL FIX */
+    .contact-box a {
+      color: var(--blue);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .contact-box a:hover {
+      color: var(--accent);
     }
 
     /* BUTTONS */
@@ -132,24 +150,16 @@
     }
 
     .call {
-      background: #0B1F3B;
+      background: var(--blue);
       color: white;
     }
 
-    /* FOOTER */
     footer {
-      background: #0B1F3B;
+      background: var(--blue);
       color: white;
       text-align: center;
       padding: 15px;
       font-size: 14px;
-    }
-
-    /* ANIMATIONS */
-    @keyframes pulse {
-      0% {transform: scale(1);}
-      50% {transform: scale(1.05);}
-      100% {transform: scale(1);}
     }
 
     /* MOBILE */
@@ -165,16 +175,12 @@
   <!-- HEADER -->
   <div class="header">
     <img src="logo.png" class="logo" alt="Giants Logo">
-
-    <div class="subtitle">
-      ENGINEERING • CONSTRUCTION • INFRASTRUCTURE
-    </div>
+    <div class="subtitle">ENGINEERING • CONSTRUCTION • INFRASTRUCTURE</div>
   </div>
 
   <!-- HERO -->
   <div class="hero">
     <h1>Giants General Contracting</h1>
-
     <div class="badge">🚧 Under Construction 🚧</div>
 
     <p>
@@ -201,7 +207,7 @@
     <h2>Contact Us</h2>
 
     <div class="contact-box">
-      📧 info@giantsgc.com<br>
+      📧 <a href="mailto:info@giantsgc.com">info@giantsgc.com</a><br>
       📞 +20 12 8123 9563
     </div>
 
@@ -214,26 +220,9 @@
     </a>
   </div>
 
-  <!-- FOOTER -->
   <footer>
     © 2026 Giants General Contracting
   </footer>
-
-  <!-- SCROLL ANIMATION -->
-  <script>
-    const cards = document.querySelectorAll('.card');
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){
-          entry.target.style.opacity = 1;
-          entry.target.style.transform = "translateY(0)";
-        }
-      });
-    }, { threshold: 0.2 });
-
-    cards.forEach(card => observer.observe(card));
-  </script>
 
 </body>
 </html>
