@@ -2,54 +2,54 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Giants General Contracting</title>
 
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #ffffff; /* WHITE BACKGROUND */
-    }
-
-    /* HEADER - KEEP LIGHT */
-    .header {
       background: #ffffff;
-      text-align: center;
-      padding: 50px 20px;
-      border-bottom: 3px solid #0B1F3B; /* BLUE LINE */
+      color: #0B1F3B;
     }
 
-    /* BIG LOGO */
+    /* HEADER */
+    .header {
+      text-align: center;
+      padding: 40px 15px;
+      border-bottom: 3px solid #0B1F3B;
+    }
+
     .logo {
-      width: 280px;   /* bigger logo */
-      max-width: 90%;
+      width: 260px;
+      max-width: 85%;
       height: auto;
     }
 
     .subtitle {
-      color: #0B1F3B;
-      margin-top: 12px;
+      margin-top: 10px;
       font-size: 14px;
-      letter-spacing: 1px;
       font-weight: bold;
+      color: #0B1F3B;
+      letter-spacing: 1px;
     }
 
-    /* MAIN CONTENT */
-    .container {
+    /* HERO */
+    .hero {
       text-align: center;
-      padding: 70px 20px;
+      padding: 50px 20px;
     }
 
     h1 {
-      color: #0B1F3B;
-      font-size: 38px;
-      margin-bottom: 10px;
+      font-size: 36px;
+      margin: 10px 0;
     }
 
     .badge {
       display: inline-block;
-      margin-top: 20px;
-      padding: 10px 22px;
+      margin-top: 15px;
+      padding: 10px 20px;
       background: #0B1F3B;
       color: white;
       border-radius: 25px;
@@ -61,36 +61,85 @@
       font-size: 16px;
       margin-top: 20px;
       line-height: 1.6;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* SERVICES */
+    .services {
+      background: #f5f7fa;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .services h2 {
+      margin-bottom: 30px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      font-weight: bold;
     }
 
     /* CONTACT */
     .contact {
-      margin-top: 30px;
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .contact-box {
+      margin-top: 20px;
       font-size: 16px;
-      color: #222;
       line-height: 1.8;
     }
 
-    /* WHATSAPP BUTTON */
-    .whatsapp {
+    /* BUTTONS */
+    .btn {
       display: inline-block;
-      margin-top: 20px;
-      padding: 12px 22px;
-      background: #25D366;
-      color: white;
+      margin-top: 15px;
+      padding: 14px 24px;
       border-radius: 30px;
       text-decoration: none;
       font-weight: bold;
+      font-size: 16px;
+    }
+
+    .whatsapp {
+      background: #25D366;
+      color: white;
+    }
+
+    .call {
+      background: #0B1F3B;
+      color: white;
     }
 
     /* FOOTER */
     footer {
-      margin-top: 60px;
-      padding: 15px;
       background: #0B1F3B;
       color: white;
       text-align: center;
+      padding: 15px;
       font-size: 14px;
+    }
+
+    /* MOBILE TWEAKS */
+    @media (max-width: 768px) {
+      h1 { font-size: 26px; }
+      .logo { width: 180px; }
+      p { font-size: 15px; }
     }
   </style>
 </head>
@@ -100,33 +149,51 @@
   <!-- HEADER -->
   <div class="header">
     <img src="logo.png" class="logo" alt="Giants Logo">
-
-    <div class="subtitle">
-      ENGINEERING • CONSTRUCTION • INFRASTRUCTURE
-    </div>
+    <div class="subtitle">ENGINEERING • CONSTRUCTION • INFRASTRUCTURE</div>
   </div>
 
-  <!-- MAIN -->
-  <div class="container">
-
+  <!-- HERO -->
+  <div class="hero">
     <h1>Giants General Contracting</h1>
 
     <div class="badge">🚧 Under Construction 🚧</div>
 
     <p>
-      We are building a professional engineering and construction platform
-      focused on delivering high-quality infrastructure solutions.
+      A professional construction company delivering high-quality engineering,
+      infrastructure, and landscaping solutions across Egypt.
     </p>
+  </div>
 
-    <div class="contact">
+  <!-- SERVICES -->
+  <div class="services">
+    <h2>Our Services</h2>
+
+    <div class="grid">
+      <div class="card">Civil Construction</div>
+      <div class="card">Infrastructure Works</div>
+      <div class="card">Landscaping & Irrigation</div>
+      <div class="card">Project Management</div>
+      <div class="card">Quantity Surveying</div>
+      <div class="card">Maintenance Works</div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="contact">
+    <h2>Contact Us</h2>
+
+    <div class="contact-box">
       📧 info@giantsgc.com<br>
       📞 +20 12 8123 9563
     </div>
 
-    <a class="whatsapp" href="https://wa.me/201281239563" target="_blank">
-      💬 Contact on WhatsApp
+    <a class="btn whatsapp" href="https://wa.me/201281239563" target="_blank">
+      💬 WhatsApp Us
     </a>
 
+    <a class="btn call" href="tel:+201281239563">
+      📞 Call Now
+    </a>
   </div>
 
   <!-- FOOTER -->
