@@ -1,228 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Giants EPC | Engineering & Construction</title>
 
-  <title>Giants General Contracting</title>
+<style>
+body { margin:0; font-family:Arial; background:#fff; }
 
-  <style>
-    :root {
-      --blue: #0B1F3B;
-      --accent: #F28C28;
-      --light: #F5F7FA;
-      --white: #ffffff;
-      --text: #333;
-    }
+header {
+  background:#0B1F3B;
+  color:white;
+  text-align:center;
+  padding:50px 20px;
+}
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: var(--blue);
-      color: var(--blue);
-    }
+.logo { width:220px; }
 
-    /* HEADER */
-    .header {
-      background: var(--light);
-      text-align: center;
-      padding: 40px 15px;
-    }
+nav {
+  background:#ffffff;
+  text-align:center;
+  padding:15px;
+  border-bottom:2px solid #eee;
+}
 
-    .logo {
-      width: 260px;
-      max-width: 85%;
-      height: auto;
-    }
+nav a {
+  margin:0 15px;
+  text-decoration:none;
+  color:#0B1F3B;
+  font-weight:bold;
+}
 
-    .subtitle {
-      margin-top: 10px;
-      font-size: 14px;
-      color: var(--blue);
-      letter-spacing: 1px;
-    }
+.hero {
+  text-align:center;
+  padding:60px 20px;
+}
 
-    /* HERO */
-    .hero {
-      text-align: center;
-      padding: 60px 20px;
-      background: var(--white);
-    }
+.hero h1 { font-size:36px; color:#0B1F3B; }
 
-    h1 {
-      font-size: 36px;
-      margin: 10px 0;
-    }
+.badge {
+  background:#F28C28;
+  color:white;
+  display:inline-block;
+  padding:8px 18px;
+  border-radius:20px;
+  margin-top:10px;
+}
 
-    .badge {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 10px 20px;
-      background: var(--accent);
-      color: white;
-      border-radius: 25px;
-      font-weight: bold;
-    }
+.section {
+  padding:60px 20px;
+  text-align:center;
+  background:#f5f7fa;
+}
 
-    p {
-      color: var(--text);
-      font-size: 16px;
-      margin-top: 20px;
-      line-height: 1.6;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+  max-width:1000px;
+  margin:auto;
+}
 
-    /* SERVICES */
-    .services {
-      background: var(--blue);
-      padding: 60px 20px;
-      text-align: center;
-    }
+.card {
+  background:white;
+  padding:25px;
+  border-radius:10px;
+  box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
 
-    .services h2 {
-      margin-bottom: 30px;
-      color: var(--blue);
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .card {
-      background: var(--white);
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-      font-weight: bold;
-      transition: 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 10px 25px rgba(0,0,0,1);
-    }
-
-    /* CONTACT */
-    .contact {
-      text-align: center;
-      padding: 60px 20px;
-      background: var(--white);
-    }
-
-    .contact-box {
-      margin-top: 20px;
-      font-size: 16px;
-      line-height: 1.8;
-    }
-
-    /* EMAIL FIX */
-    .contact-box a {
-      color: var(--blue);
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .contact-box a:hover {
-      color: var(--accent);
-    }
-
-    /* BUTTONS */
-    .btn {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 14px 24px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 16px;
-      transition: 0.3s ease;
-    }
-
-    .whatsapp {
-      background: #25D366;
-      color: white;
-    }
-
-    .call {
-      background: var(--blue);
-      color: white;
-    }
-
-    footer {
-      background: var(--blue);
-      color: white;
-      text-align: center;
-      padding: 15px;
-      font-size: 14px;
-    }
-
-    /* MOBILE */
-    @media (max-width: 768px) {
-      h1 { font-size: 26px; }
-      .logo { width: 180px; }
-    }
-  </style>
+footer {
+  background:#0B1F3B;
+  color:white;
+  text-align:center;
+  padding:20px;
+}
+</style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <div class="header">
-    <img src="logo.png" class="logo" alt="Giants Logo">
-    <div class="subtitle">LANDSCAPING • CIVIL WORKS • INTERIOR DESIGN</div>
+<header>
+  <img src="assets/logo.png" class="logo">
+  <h1>Giants EPC</h1>
+  <p>Engineering • Procurement • Construction</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="projects.html">Projects</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<div class="hero">
+  <h1>Building Infrastructure That Lasts</h1>
+  <div class="badge">EPC Contractor in Egypt</div>
+</div>
+
+<div class="section">
+  <h2>Our Core Services</h2>
+
+  <div class="grid">
+    <div class="card">Civil Construction</div>
+    <div class="card">Infrastructure Works</div>
+    <div class="card">Landscaping</div>
+    <div class="card">HVAC Systems</div>
   </div>
+</div>
 
-  <!-- HERO -->
-  <div class="hero">
-    <h1>Giants General Contracting</h1>
-    <div class="badge">🚧 Under Construction 🚧</div>
-
-    <p>
-      A professional construction company delivering high-quality engineering,
-      Landscaping, and technical solutions across Egypt.
-    </p>
-  </div>
-
-  <!-- SERVICES -->
-  <div class="services">
-    <h2>Our Services</h2>
-
-    <div class="grid">
-      <div class="card">Landscaping & Irrigation Works</div>
-      <div class="card">Civil Construction Works</div>
-      <div class="card">Interior Fit-Out & Design</div>
-      <div class="card">Accessibility & Mobility Solutions</div>
-      <div class="card">HVAC Systems Installation</div>
-    </div>
-  </div>
-
-  <!-- CONTACT -->
-  <div class="contact">
-    <h2>Contact Us</h2>
-
-    <div class="contact-box">
-      📧 <a href="mailto:info@giantsgc.com">info@giantsgc.com</a><br>
-      📞 +20 12 8123 9563
-    </div>
-
-    <a class="btn whatsapp" href="https://wa.me/201281239563" target="_blank">
-      💬 WhatsApp Us
-    </a>
-
-    <a class="btn call" href="tel:+201281239563">
-      📞 Call Now
-    </a>
-  </div>
-
-  <footer>
-    © 2026 Giants General Contracting
-  </footer>
+<footer>
+© 2026 Giants EPC
+</footer>
 
 </body>
 </html>
