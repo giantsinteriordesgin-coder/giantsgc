@@ -12,6 +12,7 @@
       font-family: Arial, sans-serif;
       background: #ffffff;
       color: #0B1F3B;
+      overflow-x: hidden;
     }
 
     /* HEADER */
@@ -31,14 +32,13 @@
       margin-top: 10px;
       font-size: 14px;
       font-weight: bold;
-      color: #0B1F3B;
       letter-spacing: 1px;
     }
 
     /* HERO */
     .hero {
       text-align: center;
-      padding: 50px 20px;
+      padding: 60px 20px;
     }
 
     h1 {
@@ -54,6 +54,7 @@
       color: white;
       border-radius: 25px;
       font-weight: bold;
+      animation: pulse 2s infinite;
     }
 
     p {
@@ -69,7 +70,7 @@
     /* SERVICES */
     .services {
       background: #f5f7fa;
-      padding: 50px 20px;
+      padding: 60px 20px;
       text-align: center;
     }
 
@@ -80,23 +81,31 @@
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 15px;
-      max-width: 900px;
+      gap: 20px;
+      max-width: 1000px;
       margin: auto;
     }
 
     .card {
       background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
       font-weight: bold;
+      transition: 0.3s ease;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     }
 
     /* CONTACT */
     .contact {
       text-align: center;
-      padding: 50px 20px;
+      padding: 60px 20px;
     }
 
     .contact-box {
@@ -114,6 +123,7 @@
       text-decoration: none;
       font-weight: bold;
       font-size: 16px;
+      transition: 0.3s ease;
     }
 
     .whatsapp {
@@ -135,11 +145,17 @@
       font-size: 14px;
     }
 
-    /* MOBILE TWEAKS */
+    /* ANIMATIONS */
+    @keyframes pulse {
+      0% {transform: scale(1);}
+      50% {transform: scale(1.05);}
+      100% {transform: scale(1);}
+    }
+
+    /* MOBILE */
     @media (max-width: 768px) {
       h1 { font-size: 26px; }
       .logo { width: 180px; }
-      p { font-size: 15px; }
     }
   </style>
 </head>
@@ -149,7 +165,10 @@
   <!-- HEADER -->
   <div class="header">
     <img src="logo.png" class="logo" alt="Giants Logo">
-    <div class="subtitle">ENGINEERING • CONSTRUCTION • INFRASTRUCTURE</div>
+
+    <div class="subtitle">
+      ENGINEERING • CONSTRUCTION • INFRASTRUCTURE
+    </div>
   </div>
 
   <!-- HERO -->
@@ -159,7 +178,8 @@
     <div class="badge">🚧 Under Construction 🚧</div>
 
     <p>
-      A professional construction company delivering high-quality engineering, and landscaping solutions across Egypt.
+      A professional construction company delivering high-quality engineering,
+      infrastructure, and technical solutions across Egypt.
     </p>
   </div>
 
@@ -168,11 +188,11 @@
     <h2>Our Services</h2>
 
     <div class="grid">
-      <div class="card">Landscaping & Irrigation</div>
-      <div class="card">CIVIL CONSTRUCTION WORKS</div>
-      <div class="card">INTERIOR DESIGN</div>
-      <div class="card">ACCESSIBILITY SOLUTIONS</div>
-      <div class="card">HVAC WORKS</div>
+      <div class="card">Landscaping & Irrigation Works</div>
+      <div class="card">Civil Construction Works</div>
+      <div class="card">Interior Fit-Out & Design</div>
+      <div class="card">Accessibility & Mobility Solutions</div>
+      <div class="card">HVAC Systems Installation</div>
     </div>
   </div>
 
@@ -198,6 +218,22 @@
   <footer>
     © 2026 Giants General Contracting
   </footer>
+
+  <!-- SCROLL ANIMATION -->
+  <script>
+    const cards = document.querySelectorAll('.card');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = "translateY(0)";
+        }
+      });
+    }, { threshold: 0.2 });
+
+    cards.forEach(card => observer.observe(card));
+  </script>
 
 </body>
 </html>
