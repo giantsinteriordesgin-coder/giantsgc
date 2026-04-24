@@ -8,52 +8,32 @@
 <style>
 body{margin:0;font-family:Arial;background:#f5f7fa;}
 
+/* NAV */
+nav{position:absolute;top:20px;right:20px;z-index:10;}
+nav a{color:white;margin-left:15px;text-decoration:none;font-weight:bold;}
+nav button{margin-left:15px;padding:6px 12px;border:none;border-radius:20px;cursor:pointer;font-weight:bold;}
+
+/* HERO */
 .hero{
-  height:100vh;
+  height:70vh;
   background:#0B1F3B;
-  color:white;
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
+  color:white;
   position:relative;
 }
-
 .hero::before{
   content:"";
   position:absolute;
   width:100%;
   height:100%;
-  background:rgba(0,0,0,0.5);
+  background:rgba(0,0,0,0.55);
 }
+.hero-content{position:relative;z-index:2;}
 
-.content{
-  position:relative;
-  z-index:2;
-}
-
-.logo{
-  width:400px;
-  cursor:pointer;
-  margin-bottom:20px;
-  transition:0.3s;
-}
-
-.logo:hover{transform:scale(1.05);}
-
-nav{
-  position:absolute;
-  top:20px;
-  right:20px;
-  z-index:3;
-}
-
-nav a{
-  color:white;
-  margin-left:15px;
-  text-decoration:none;
-  font-weight:bold;
-}
+.logo{width:220px;margin-bottom:20px;cursor:pointer;}
 
 .btn{
   display:inline-block;
@@ -65,59 +45,30 @@ nav a{
   text-decoration:none;
 }
 
-.section{
-  padding:80px 20px;
-  text-align:center;
-  background:white;
-}
+.section{padding:80px 20px;text-align:center;background:white;}
+.section-dark{background:#f5f7fa;}
 
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:20px;
-  max-width:1000px;
+  max-width:1100px;
   margin:auto;
   margin-top:40px;
 }
 
 .card{
-  background:#f5f7fa;
+  background:white;
   padding:25px;
   border-radius:12px;
-  transition:0.3s;
+  box-shadow:0 5px 20px rgba(0,0,0,0.08);
 }
 
-.card:hover{
-  transform:translateY(-10px);
-  background:white;
-}
-
-footer{
-  background:#0B1F3B;
-  color:white;
-  text-align:center;
-  padding:20px;
-}
+/* RTL */
+body[dir="rtl"]{text-align:right;}
 </style>
 </head>
 
-  <script>
-let currentLang = "en";
-
-function toggleLang() {
-  currentLang = currentLang === "en" ? "ar" : "en";
-
-  document.querySelectorAll("[data-en]").forEach(el => {
-    el.innerText = el.getAttribute("data-" + currentLang);
-  });
-
-  document.body.dir = currentLang === "ar" ? "rtl" : "ltr";
-
-  document.querySelector("button").innerText =
-    currentLang === "en" ? "AR" : "EN";
-}
-</script>
-  
 <body>
 
 <div class="hero">
@@ -128,50 +79,61 @@ function toggleLang() {
     <a href="projects.html">Projects</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
-    <button onclick="toggleLang()" style="
-">
-  AR
-</button></a>
+
+    <button onclick="toggleLang()">AR</button>
   </nav>
 
-  <div class="content">
+  <div class="hero-content">
 
     <a href="index.html">
       <img src="assets/logo.png" class="logo">
     </a>
 
-    <h1>Giants General Contracting</h1>
-    <p>Engineering • Construction • Infrastructure</p>
+    <h1 data-en="Giants General Contracting" data-ar="جاينتس للمقاولات العامة">
+      Giants General Contracting
+    </h1>
 
-    <a href="projects.html" class="btn">View Projects</a>
+    <p data-en="Engineering • Construction • Infrastructure"
+       data-ar="هندسة • إنشاءات • بنية تحتية">
+      Engineering • Construction • Infrastructure
+    </p>
+
+    <a href="projects.html" class="btn"
+       data-en="View Projects" data-ar="مشاهدة المشاريع">
+       View Projects
+    </a>
 
   </div>
-
 </div>
 
-<div class="section">
-
-  <h2>Our Services</h2>
+<div class="section section-dark">
+  <h2 data-en="Our Services" data-ar="خدماتنا">Our Services</h2>
 
   <div class="grid">
-    <div class="card"
-     data-en="Civil Construction Works"
-     data-ar="أعمال الإنشاءات المدنية">
-  Civil Construction Works
-</div>
-    <div class="card">Infrastructure Works</div>
-    <div class="card"
-     data-en="Landscapings"
-     data-ar="أعمال الزراعات وشبكات الري">
-  Civil Construction Works
-</div>
-    <div class="card">HVAC Systems</div>
-    <div class="card">Interior Fit-Out</div>
+    <div class="card" data-en="Civil Construction" data-ar="إنشاءات مدنية">Civil Construction</div>
+    <div class="card" data-en="Infrastructure Works" data-ar="أعمال البنية التحتية">Infrastructure Works</div>
+    <div class="card" data-en="Landscaping" data-ar="لاندسكيب">Landscaping</div>
+    <div class="card" data-en="HVAC Systems" data-ar="أنظمة التكييف">HVAC Systems</div>
+    <div class="card" data-en="Interior Fit-Out" data-ar="تشطيبات داخلية">Interior Fit-Out</div>
   </div>
-
 </div>
 
-<footer>© 2026 Giants General Contracting</footer>
+<script>
+let currentLang = "en";
+
+function toggleLang(){
+  currentLang = currentLang === "en" ? "ar" : "en";
+
+  document.querySelectorAll("[data-en]").forEach(el=>{
+    el.innerText = el.getAttribute("data-" + currentLang);
+  });
+
+  document.body.dir = currentLang === "ar" ? "rtl" : "ltr";
+
+  document.querySelector("button").innerText =
+    currentLang === "en" ? "AR" : "EN";
+}
+</script>
 
 </body>
 </html>
