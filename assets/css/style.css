@@ -1,5 +1,31 @@
 body{margin:0;font-family:Arial;background:#f5f7fa;}
 
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition: all 0.8s ease;
+}
+
+/* لما يظهر */
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* Variations (اختياري) */
+.reveal-left{
+  transform:translateX(-50px);
+}
+
+.reveal-right{
+  transform:translateX(50px);
+}
+
+.reveal.active.reveal-left,
+.reveal.active.reveal-right{
+  transform:translateX(0);
+}
+
 nav{
   position:absolute;
   top:20px;
