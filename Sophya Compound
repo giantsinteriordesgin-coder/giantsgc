@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Details</title>
+
+<style>
+body{margin:0;font-family:Arial;background:#f5f7fa;}
+
+/* HERO */
+.hero{
+  height:50vh;
+  background:#0B1F3B;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.55);
+}
+.hero-content{position:relative;z-index:2;}
+
+.logo{width:200px;margin-bottom:20px;}
+
+.section{
+  padding:40px 20px;
+  max-width:900px;
+  margin:auto;
+}
+
+.section img{
+  width:100%;
+  border-radius:10px;
+  margin-bottom:20px;
+}
+
+.back{
+  display:inline-block;
+  margin:20px;
+  text-decoration:none;
+  color:#0B1F3B;
+  font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<!-- زر رجوع -->
+<a href="projects.html" class="back"
+   data-en="← Back to Projects"
+   data-ar="← الرجوع للمشاريع">
+   ← Back to Projects
+</a>
+
+<div class="hero">
+  <div class="hero-content">
+
+    <a href="index.html">
+      <img src="assets/logo.png" class="logo">
+    </a>
+
+    <h1 data-en="Road Construction Project"
+        data-ar="مشروع إنشاء طرق">
+      Road Construction Project
+    </h1>
+
+  </div>
+</div>
+
+<div class="section">
+
+  <img src="assets/images/project2.jpeg">
+
+  <p data-en="This project includes full road construction works including excavation, asphalt, and infrastructure."
+     data-ar="يشمل هذا المشروع أعمال إنشاء الطرق بالكامل بما في ذلك الحفر والأسفلت والبنية التحتية.">
+    This project includes full road construction works including excavation, asphalt, and infrastructure.
+  </p>
+
+</div>
+
+<!-- نفس سكريبت اللغة -->
+<script>
+let currentLang = localStorage.getItem("lang") || "en";
+
+function applyLang(){
+  document.querySelectorAll("[data-en]").forEach(el=>{
+    el.textContent = el.getAttribute("data-" + currentLang);
+  });
+
+  document.body.dir = currentLang === "ar" ? "rtl" : "ltr";
+}
+
+applyLang();
+</script>
+
+</body>
+</html>
