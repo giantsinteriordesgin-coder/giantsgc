@@ -3,16 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Services | Giants General Contracting</title>
+<title>Services</title>
 
 <style>
-body{
-  margin:0;
-  font-family:Arial;
-  background:#f5f7fa;
-}
+body{margin:0;font-family:Arial;background:#f5f7fa;}
 
-/* NAV (Orascom style) */
 nav{
   position:absolute;
   top:20px;
@@ -20,17 +15,13 @@ nav{
   z-index:10;
 }
 
-nav a{
-  color:white;
-  margin-left:15px;
-  text-decoration:none;
-  font-weight:bold;
-  opacity:0.9;
+/* لما اللغة عربي */
+body[dir="rtl"] nav{
+  right:auto;
+  left:20px;
 }
-
-nav a:hover{
-  opacity:1;
-}
+nav a{color:white;margin-left:15px;text-decoration:none;font-weight:bold;}
+nav button{margin-left:15px;padding:6px 12px;border:none;border-radius:20px;cursor:pointer;font-weight:bold;}
 
 /* HERO */
 .hero{
@@ -42,10 +33,7 @@ nav a:hover{
   text-align:center;
   color:white;
   position:relative;
-  overflow:hidden;
 }
-
-/* DARK OVERLAY */
 .hero::before{
   content:"";
   position:absolute;
@@ -53,27 +41,10 @@ nav a:hover{
   height:100%;
   background:rgba(0,0,0,0.55);
 }
+.hero-content{position:relative;z-index:2;}
 
-/* HERO CONTENT */
-.hero-content{
-  position:relative;
-  z-index:2;
-  animation:fadeUp 1s ease;
-}
+.logo{width:220px;margin-bottom:20px;cursor:pointer;}
 
-/* LOGO */
-.logo{
-  width:220px;
-  cursor:pointer;
-  margin-bottom:20px;
-  transition:0.3s;
-}
-
-.logo:hover{
-  transform:scale(1.05);
-}
-
-/* BUTTON */
 .btn{
   display:inline-block;
   margin-top:20px;
@@ -82,21 +53,11 @@ nav a:hover{
   color:white;
   border-radius:30px;
   text-decoration:none;
-  font-weight:bold;
 }
 
-/* SECTIONS */
-.section{
-  padding:80px 20px;
-  text-align:center;
-  background:white;
-}
+.section{padding:80px 20px;text-align:center;background:white;}
+.section-dark{background:#f5f7fa;}
 
-.section-dark{
-  background:#f5f7fa;
-}
-
-/* GRID */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -106,57 +67,96 @@ nav a:hover{
   margin-top:40px;
 }
 
-/* CARDS */
 .card{
   background:white;
   padding:25px;
   border-radius:12px;
   box-shadow:0 5px 20px rgba(0,0,0,0.08);
-  transition:0.4s;
 }
 
-.card:hover{
-  transform:translateY(-10px);
-}
-
-/* ANIMATION */
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(30px);}
-  to{opacity:1;transform:translateY(0);}
-}
+/* RTL */
+body[dir="rtl"]{text-align:right;}
 </style>
 </head>
 
 <body>
 
 <div class="hero">
-
   <nav>
-   <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="projects.html">Projects</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
+    <a href="index.html"
+   data-en="Home"
+   data-ar="الرئيسية">Home</a>
+
+<a href="services.html"
+   data-en="Services"
+   data-ar="الخدمات">Services</a>
+
+<a href="projects.html"
+   data-en="Projects"
+   data-ar="المشاريع">Projects</a>
+
+<a href="about.html"
+   data-en="About"
+   data-ar="من نحن">About</a>
+
+<a href="contact.html"
+   data-en="Contact"
+   data-ar="تواصل معنا">Contact</a>
+
+    <button onclick="toggleLang()">AR</button>
   </nav>
 
   <div class="hero-content">
-    <a href="index.html">
-      <img src="assets/logo.png" class="logo">
-    </a>
-    <h1>Our Services</h1>
-  </div>
+    <a href="index.html"><img src="assets/logo.png" class="logo"></a>
 
+    <h1 data-en="Our Services" data-ar="خدماتنا">Our Services</h1>
+  </div>
 </div>
 
 <div class="section">
   <div class="grid">
-    <div class="card">Civil Construction Works</div>
-    <div class="card">Infrastructure Development</div>
-    <div class="card">Landscaping & Irrigation</div>
-    <div class="card">HVAC Systems</div>
-    <div class="card">Interior Fit-Out</div>
+    <div class="card" data-en="Civil Construction Works" data-ar="أعمال الإنشاءات المدنية">Civil Construction Works</div>
+    <div class="card" data-en="Infrastructure Development" data-ar="تطوير البنية التحتية">Infrastructure Development</div>
+    <div class="card" data-en="Landscaping & Irrigation" data-ar="لاندسكيب و ري">Landscaping</div>
+    <div class="card" data-en="HVAC Systems" data-ar="أنظمة التكييف">HVAC</div>
   </div>
 </div>
+
+<script>
+let currentLang = "en";
+
+// تحميل اللغة المحفوظة أول ما الصفحة تفتح
+window.onload = function () {
+  const savedLang = localStorage.getItem("lang");
+
+  if (savedLang) {
+    currentLang = savedLang;
+    applyLang();
+  }
+};
+
+// تغيير اللغة
+function toggleLang(){
+  currentLang = currentLang === "en" ? "ar" : "en";
+
+  // حفظ اللغة
+  localStorage.setItem("lang", currentLang);
+
+  applyLang();
+}
+
+// تطبيق اللغة على الصفحة
+function applyLang(){
+  document.querySelectorAll("[data-en]").forEach(el=>{
+    el.textContent = el.getAttribute("data-" + currentLang);
+  });
+
+  document.body.dir = currentLang === "ar" ? "rtl" : "ltr";
+
+  document.querySelector("button").textContent =
+    currentLang === "en" ? "AR" : "EN";
+}
+</script>
 
 </body>
 </html>
