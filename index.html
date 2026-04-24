@@ -139,12 +139,12 @@ function toggleLang(){
   currentLang = currentLang === "en" ? "ar" : "en";
 
   document.querySelectorAll("[data-en]").forEach(el=>{
-    el.innerText = el.getAttribute("data-" + currentLang);
+    el.textContent = el.getAttribute("data-" + currentLang);
   });
 
   document.body.dir = currentLang === "ar" ? "rtl" : "ltr";
 
-  document.querySelector("button").innerText =
+  document.querySelector("button").textContent =
     currentLang === "en" ? "AR" : "EN";
 }
 </script>
