@@ -123,3 +123,24 @@ body[dir="rtl"]{text-align:right;}
 .grid img:hover{
   transform:scale(1.03);
 }
+
+.section{
+  padding:60px 10%;
+}
+
+.section h2{
+  margin-bottom:25px;
+  font-size:28px;
+  color:#0B1F3B;
+  position:relative;
+}
+
+/* خط تحت العنوان */
+.section h2::after{
+  content:"";
+  width:60px;
+  height:3px;
+  background:#F28C28;
+  display:block;
+  margin-top:10px;
+}
