@@ -3,104 +3,93 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="assets/css/style.css">
+
 <title>Project Details</title>
-
-<style>
-body{margin:0;font-family:Arial;background:#f5f7fa;}
-
-/* HERO */
-.hero{
-  height:50vh;
-  background:#0B1F3B;
-  color:white;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  position:relative;
-}
-.hero::before{
-  content:"";
-  position:absolute;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.55);
-}
-.hero-content{position:relative;z-index:2;}
-
-.logo{width:200px;margin-bottom:20px;}
-
-.section{
-  padding:40px 20px;
-  max-width:900px;
-  margin:auto;
-}
-
-.section img{
-  width:100%;
-  border-radius:10px;
-  margin-bottom:20px;
-}
-
-.back{
-  display:inline-block;
-  margin:20px;
-  text-decoration:none;
-  color:#0B1F3B;
-  font-weight:bold;
-}
-</style>
 </head>
 
 <body>
 
-<!-- زر رجوع -->
-<a href="projects.html" class="back"
-   data-en="← Back to Projects"
-   data-ar="← الرجوع للمشاريع">
-   ← Back to Projects
-</a>
+<nav>
+    <a href="index.html"
+   data-en="Home"
+   data-ar="الرئيسية">Home</a>
 
-<div class="hero">
-  <div class="hero-content">
+<a href="services.html"
+   data-en="Services"
+   data-ar="الخدمات">Services</a>
 
-    <a href="index.html">
-      <img src="assets/logo.png" class="logo">
-    </a>
+<a href="projects.html"
+   data-en="Projects"
+   data-ar="المشاريع">Projects</a>
 
-    <h1 data-en="Road Construction Project"
-        data-ar="مشروع إنشاء طرق">
-      Road Construction Project
-    </h1>
+<a href="about.html"
+   data-en="About"
+   data-ar="من نحن">About</a>
+
+<a href="contact.html"
+   data-en="Contact"
+   data-ar="تواصل معنا">Contact</a>
+
+    <button onclick="toggleLang()">AR</button>
+  </nav>
+
+<div class="main-content">
+
+  <!-- HERO -->
+  <div class="hero" style="height:60vh;">
+    <div>
+      <h1 data-en="Sophya Compound"
+          data-ar="كموند صوفيا">
+        Planting & Irrigation Project
+      </h1>
+    </div>
+  </div>
+
+  <!-- DETAILS -->
+  <section class="section">
+
+    <h2 data-en="Project Overview"
+        data-ar="نظرة عامة على المشروع">
+      Project Overview
+    </h2>
+
+    <p data-en="This project includes full road construction, excavation, asphalt works and infrastructure development."
+       data-ar="يشمل المشروع أعمال إنشاء الطرق والحفر والأسفلت والبنية التحتية بالكامل.">
+      This project includes full road construction, excavation, asphalt works and infrastructure development.
+    </p>
+
+    <!-- GALLERY -->
+    <div class="grid">
+
+      <img src="assets/images/project2.jpg">
+      <img src="assets/images/project2.jpg">
+      <img src="assets/images/project2.jpg">
+
+    </div>
+
+  </section>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+
+  <div class="footer-content">
+
+    <p data-en="© 2026 Giants General Contracting. All Rights Reserved."
+       data-ar="© 2026 العمالقة للمقاولات العامة. جميع الحقوق محفوظة.">
+      © 2026 Giants General Contracting. All Rights Reserved.
+    </p>
+
+    <p class="tm">™ Giants General Contracting</p>
 
   </div>
-</div>
 
-<div class="section">
+</footer>
 
-  <img src="assets/images/project2.jpeg">
-
-  <p data-en="This project includes full planting & irrigation works."
-     data-ar="يشمل هذا المشروع أعمال إنشاء الطرق بالكامل بما في ذلك الحفر والأسفلت والبنية التحتية.">
-    This project includes full road construction works including excavation, asphalt, and infrastructure.
-  </p>
-
-</div>
-
-<!-- نفس سكريبت اللغة -->
-<script>
-let currentLang = localStorage.getItem("lang") || "en";
-
-function applyLang(){
-  document.querySelectorAll("[data-en]").forEach(el=>{
-    el.textContent = el.getAttribute("data-" + currentLang);
-  });
-
-  document.body.dir = currentLang === "ar" ? "rtl" : "ltr";
-}
-
-applyLang();
-</script>
+<script src="assets/js/main.js"></script>
 
 </body>
 </html>
