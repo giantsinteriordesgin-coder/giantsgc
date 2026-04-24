@@ -5,120 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Projects | Giants General Contracting</title>
 
-<style>
-body{margin:0;font-family:Arial;background:#f5f7fa;}
 
-nav{
-  position:absolute;
-  top:20px;
-  right:20px;
-  z-index:10;
-}
-
-/* لما اللغة عربي */
-body[dir="rtl"] nav{
-  right:auto;
-  left:20px;
-}
-nav a{color:white;margin-left:15px;text-decoration:none;font-weight:bold;}
-nav button{margin-left:15px;padding:6px 12px;border:none;border-radius:20px;cursor:pointer;font-weight:bold;}
-
-/* HERO */
-.hero{
-  height:70vh;
-  background:#0B1F3B;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  color:white;
-  position:relative;
-}
-.hero::before{
-  content:"";
-  position:absolute;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.55);
-}
-.hero-content{position:relative;z-index:2;}
-
-.logo{width:220px;margin-bottom:20px;cursor:pointer;}
-
-.btn{
-  display:inline-block;
-  margin-top:20px;
-  padding:14px 26px;
-  background:#F28C28;
-  color:white;
-  border-radius:30px;
-  text-decoration:none;
-}
-
-.section{padding:80px 20px;text-align:center;background:white;}
-.section-dark{background:#f5f7fa;}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
-  max-width:1100px;
-  margin:auto;
-  margin-top:40px;
-}
-.card{
-  text-decoration:none;
-  color:black;
-  display:block;
-}
-.card{
-  background:white;
-  border-radius:12px;
-  overflow:hidden;
-  box-shadow:0 5px 20px rgba(0,0,0,0.08);
-  transition:0.4s;
-  text-align:center;
-}
-
-.card img{
-  width:100%;
-  height:200px;
-  object-fit:cover;
-}
-
-.card h3{
-  padding:15px;
-  margin:0;
-}
-
-.card:hover{
-  transform:translateY(-10px);
-}
-
-/* RTL */
-body[dir="rtl"]{text-align:right;}
-
-.footer{
-  background:#0B1F3B;
-  color:white;
-  text-align:center;
-  padding:25px 15px;
-  margin-top:50px;
-}
-
-.footer-content p{
-  margin:5px 0;
-}
-
-.tm{
-  font-size:12px;
-  opacity:0.7;
-  letter-spacing:1px;
-}
-
-</style>
 </head>
-
+<link rel="stylesheet" href="assets/css/style.css">
 <body>
 
 <div class="hero">
@@ -173,42 +62,6 @@ body[dir="rtl"]{text-align:right;}
 
 </div>
 
-</div>
-<script>
-let currentLang = "en";
-
-// تحميل اللغة المحفوظة أول ما الصفحة تفتح
-window.onload = function () {
-  const savedLang = localStorage.getItem("lang");
-
-  if (savedLang) {
-    currentLang = savedLang;
-    applyLang();
-  }
-};
-
-// تغيير اللغة
-function toggleLang(){
-  currentLang = currentLang === "en" ? "ar" : "en";
-
-  // حفظ اللغة
-  localStorage.setItem("lang", currentLang);
-
-  applyLang();
-}
-
-// تطبيق اللغة على الصفحة
-function applyLang(){
-  document.querySelectorAll("[data-en]").forEach(el=>{
-    el.textContent = el.getAttribute("data-" + currentLang);
-  });
-
-  document.body.dir = currentLang === "ar" ? "rtl" : "ltr";
-
-  document.querySelector("button").textContent =
-    currentLang === "en" ? "AR" : "EN";
-}
-</script>
 
 <footer class="footer">
 
@@ -224,6 +77,6 @@ function applyLang(){
   </div>
 
 </footer>
-  
+<script src="assets/js/main.js"></script>
 </body>
 </html>
