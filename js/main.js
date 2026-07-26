@@ -11,5 +11,5 @@ navbar.classList.add("scrolled");
 navbar.classList.remove("scrolled");
 
 }
-
+  
 });
