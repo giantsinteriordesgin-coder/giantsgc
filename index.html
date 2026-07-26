@@ -1,91 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Giants General Contracting</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+
 </head>
-<link rel="stylesheet" href="assets/css/style.css">
+
 <body>
 
-<div class="hero">
+<header>
 
-  <nav>
-    <a href="index.html"
-   data-en="Home"
-   data-ar="الرئيسية">Home</a>
+<nav class="navbar">
 
-<a href="services.html"
-   data-en="Services"
-   data-ar="الخدمات">Services</a>
-
-<a href="projects.html"
-   data-en="Projects"
-   data-ar="المشاريع">Projects</a>
-
-<a href="about.html"
-   data-en="About"
-   data-ar="من نحن">About</a>
-
-<a href="contact.html"
-   data-en="Contact"
-   data-ar="تواصل معنا">Contact</a>
-
-    <button onclick="toggleLang()">AR</button>
-  </nav>
-
-  <div class="hero-content">
-
-    <a href="index.html">
-      <img src="assets/logo.png" class="logo">
-    </a>
-
-    <h1 data-en="Giants General Contracting" data-ar="العمالقة للمقاولات العامة">
-      Giants General Contracting
-    </h1>
-
-    <p data-en="Engineering • Construction • Infrastructure"
-       data-ar="هندسة • إنشاءات • بنية تحتية">
-      Engineering • Construction • Infrastructure
-    </p>
-
-    <a href="projects.html" class="btn"
-       data-en="View Projects" data-ar="مشاهدة المشاريع">
-       View Projects
-    </a>
-
-  </div>
+<div class="logo">
+<img src="assets/images/logo.png" alt="">
 </div>
 
-<div class="section section-dark">
-  <h2 data-en="Our Services" data-ar="خدماتنا">Our Services</h2>
+<ul class="nav-links">
 
-  <div class="grid">
-    <div class="card" data-en="Civil Construction" data-ar="إنشاءات مدنية">Civil Construction</div>
-    <div class="card" data-en="Infrastructure Works" data-ar="أعمال البنية التحتية">Infrastructure Works</div>
-    <div class="card" data-en="Landscaping" data-ar="أعمال الزراعات وشبكات الري">Landscaping</div>
-    <div class="card" data-en="HVAC Systems" data-ar="أنظمة التكييف">HVAC Systems</div>
-    <div class="card" data-en="Interior Fit-Out" data-ar="تشطيبات داخلية">Interior Fit-Out</div>
-  </div>
+<li><a href="#">Home</a></li>
+<li><a href="#">About</a></li>
+<li><a href="#">Services</a></li>
+<li><a href="#">Projects</a></li>
+<li><a href="#">Contact</a></li>
+
+</ul>
+
+<div class="nav-right">
+
+<a class="btn-outline" href="#">
+Get Quote
+</a>
+
 </div>
 
-<footer class="footer">
+<div class="menu-btn">
 
-  <div class="footer-content">
+<span></span>
+<span></span>
+<span></span>
 
-    <p data-en="© 2026 Giants General Contracting. All Rights Reserved."
-       data-ar="© 2026 العمالقة للمقاولات العامة. جميع الحقوق محفوظة.">
-      © 2026 Giants General Contracting. All Rights Reserved.
-    </p>
+</div>
 
-    <p class="tm">™ Giants General Contracting</p>
+</nav>
 
-  </div>
+</header>
 
-</footer>
 
-<script src="assets/js/main.js"></script>
-  
+
+<section class="hero">
+
+<video autoplay muted loop playsinline>
+
+<source src="assets/video/hero.mp4" type="video/mp4">
+
+</video>
+
+<div class="overlay"></div>
+
+<div class="hero-content">
+
+<h4>INTERIOR • EXTERIOR • LANDSCAPE</h4>
+
+<h1>
+Building Excellence<br>
+Beyond Expectations
+</h1>
+
+<p>
+
+Delivering premium construction,
+interior fit-out, landscaping,
+and infrastructure solutions
+across residential,
+commercial, and public developments.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="#" class="btn-primary">
+Explore Projects
+</a>
+
+<a href="#" class="btn-secondary">
+Contact Us
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<script src="js/main.js"></script>
+
 </body>
+
 </html>
